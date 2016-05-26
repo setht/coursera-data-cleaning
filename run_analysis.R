@@ -1,7 +1,7 @@
 library(dplyr)
 library(data.table)
 library(tidyr)
-file_prefix <- "C:\\coursera\\datacleaning\\UCI HAR Dataset\\"
+file_prefix <- ""
 
 subject_test <- read.table(paste(file_prefix, "test\\subject_test.txt", sep = ""), header=FALSE)
 X_test <- read.table(paste(file_prefix, "test\\X_test.txt", sep = ""), header=FALSE)
@@ -46,3 +46,5 @@ X_data_subjects <- inner_join(X_data, subject_merged, by = c("id"))
 X_data_subjects.tidy <- gather(X_data_subjects, Calculation, Measurement, -id, -Activity, -Subject)
 X_data_subjects.tidy <- select(X_data_subjects.tidy, -id)
 X_data_subjects_agg <- summarise(group_by(X_data_subjects.tidy, Activity, Subject), avg = mean(Measurement))
+
+write.table(X_data_subjects_agg, "X_data_subjects_agg.txt", row.name = FALSE)
