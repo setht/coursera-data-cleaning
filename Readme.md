@@ -1,8 +1,3 @@
----
-title: "Readme"
-output: html_document
----
-
 ## Readme
 ## Variables and Transformations
 I have variables for the subjects by number, test and train X data which includes the measurements, test and train y data which includes the activity values, and activity labels, and features file.

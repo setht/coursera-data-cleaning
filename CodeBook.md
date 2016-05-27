@@ -1,8 +1,3 @@
----
-title: "CodeBook"
-output: html_document
----
-
 ## Files Used
 
 - 'features.txt': List of all features.
